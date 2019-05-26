@@ -26,5 +26,5 @@ def pdf():
 
 @app.route('/temp/<path:path>')
 def send_js(path):
-	print path
+	print (path)
 	return send_from_directory('temp', path)
