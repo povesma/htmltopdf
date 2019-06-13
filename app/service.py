@@ -22,7 +22,7 @@ def pdf():
 	html = data.get('html')
 	if (html):
 		# Create a file
-		filename = INPUT_HTML_DIR + '/' + temp_name
+		filename = "{}/{}".format(INPUT_HTML_DIR, temp_name)
 		_f = open(filename, 'w+')
 		_f.write(html)
 		_f.close()
