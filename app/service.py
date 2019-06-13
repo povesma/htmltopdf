@@ -19,7 +19,7 @@ def pdf():
 	file_path = '/app/{}/{}.pdf'.format(FILES_DIR, temp_name)
 	# _format = data.get('format') or ['url'] # just URL by default
 	file = None
-	_html = data.get('html')
+	html = data.get('html')
 	if (html):
 		# Create a file
 		filename = INPUT_HTML_DIR + '/' + temp_name
