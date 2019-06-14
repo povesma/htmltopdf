@@ -60,7 +60,8 @@ or
 You will get a response with a link to your PDF in JSON format
 ```
 {
-    "file":"/files/file.pdf"
+    "file": "/files/0000-22222-3333-4444-5555-6666.pdf",
+    "prefix": "/files/0000-22222-3333-4444-5555-6666/"
 }
 ```
 
@@ -78,4 +79,8 @@ To access resulting PDF, use URL like: `http://your-server:port/files/file.pdf`
 
 ## Check the result
 Go to URL like `http://localhost:5000/files/da78717f-e09f-413e-81f6-ab39d3351266.pdf`
+
+### Custom filename
+Go to URL like `http://localhost:5000/files/da78717f-e09f-413e-81f6-ab39d3351266/your_file_name.pdf`
+
 

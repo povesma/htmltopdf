@@ -39,7 +39,8 @@ def pdf():
 	
 	if(pdf_generated == 0):
 		resp = {
-			"file":"/{}/{}.pdf".format(FILES_DIR, temp_name)
+			"file":"/{}/{}.pdf".format(FILES_DIR, temp_name),
+			"prefix":"/{}/{}/".format(FILES_DIR, temp_name),
 		}
 		return (json.dumps(resp), 200, {"Content-Type":"application/json"})
 	else :
@@ -50,3 +51,9 @@ def send_pdf(path):
 	#fn = "{}.{}".format(path, '.pdf')
 	print (path)
 	return send_from_directory(pdfs_path, path)
+
+@app.route('/files/<uuid:path>/<string:filename>', methods=['GET'])
+def send_named_pdf(path, filename):
+	#fn = "{}.{}".format(path, '.pdf')
+	print ("Changind filename:", path, filename)
+	return send_from_directory(pdfs_path, "{}.pdf".format(path))
