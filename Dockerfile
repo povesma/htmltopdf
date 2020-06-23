@@ -1,7 +1,7 @@
 FROM python:3.6-stretch
 
 RUN apt-get update
-RUN apt-get install -y  wget build-essential checkinstall libxext6 libxrender1 fontconfig zlib1g-dev libfreetype6 libpng-dev libx11-dev xfonts-75dpi xfonts-base python3-venv
+RUN apt-get install -y  wget build-essential checkinstall libxext6 libxrender1 fontconfig zlib1g-dev libfreetype6 libpng-dev libx11-dev xfonts-75dpi xfonts-base python3-venv fonts-indic
 RUN pip3 install --upgrade pip
 RUN pip3 install virtualenv
 RUN wget -O wkhtmltox64.deb https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb && dpkg -i wkhtmltox64.deb
