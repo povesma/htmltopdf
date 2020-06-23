@@ -5,7 +5,7 @@ RUN apt-get install -y  wget build-essential checkinstall libxext6 libxrender1 f
 RUN pip3 install --upgrade pip
 RUN pip3 install virtualenv
 RUN wget -O wkhtmltox64.deb https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb && dpkg -i wkhtmltox64.deb
-
+RUN apt-get install -y `apt-cache pkgnames | grep '^fonts-sil' | cut -f4 -d ' '`
 WORKDIR /app
 ADD ./app /app
 RUN python -m venv venv
