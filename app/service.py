@@ -35,7 +35,7 @@ def pdf():
 		_f.close()
 		# set source as a filename
 		source = filename
-	pdf_generated = subprocess.call(['wkhtmltopdf', source, file_path])
+	pdf_generated = subprocess.call(['wkhtmltopdf', "--encoding 'utf-8'", source, file_path])
 	
 	if(pdf_generated == 0):
 		resp = {
